@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>OK TANI - Solusi Pertanian Digital</title>
+   
+    <script>
+      function redirectToLogin() {
+        window.location.href = "1. Halaman Login.html";
+      }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  />
+  </head>
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+  }
+
+  /* Navbar Styles */
+  .navbar {
+    background: rgb(210, 226, 208);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4baf4e;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: #4caf50;
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .login-btn {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  /* Hero Section */
+  .hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("gambar petani.png") center/cover;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 2rem;
+    margin-top: 60px;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+
+  .cta-button:hover {
+    background: #45a049;
+  }
+
+  /* Sections */
+  section {
+    padding: 5rem 2rem;
+  }
+
+  section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #333;
+  }
+
+  /* About Section */
+  #tentang {
+    background: #f9f9f9;
+  }
+
+  /* Information Section */
+  #informasi {
+    background: white;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .info-card {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .btn-green {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+}
+
+.btn-green:hover {
+  background-color: #4caf50;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+  /* Features Section */
+  #fitur {
+    background: #f9f9f9;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .fitur-icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+  text-align: center;
+  }
+
+  .feature-card h3 {
+  color: #4caf50;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.feature-card p {
+text-align: left;
+font-weight: 550;  /* Nilai bisa diatur: 400 (normal), 500, 600, 700 (bold), 800, 900 */
+}
+
+  /* Contact Section */
+  #kontak {
+    background: white;
+  }
+
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .contact-form button {
+    background: #4caf50;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 768px) {
+.nav-links {
+display: none;
+flex-direction: column;
+position: absolute;
+top: 100%;
+left: 0;
+right: 0;
+background: rgb(210, 226, 208);
+padding: 1rem;
+text-align: center;
+}
+  }
+
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    .hamburger {
+      display: block;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .contact-section {
+      background-color: #1a1f2e !important;
+      color: white;
+      padding: 3rem 2rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .contact-info h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+
+    .contact-info p {
+      color: #ccc;
+      margin-bottom: 0.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .social-links a:hover {
+      background-color: #00bfa5;
+    }
+
+    .scroll-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: #4e9957;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .scroll-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-to-top:hover {
+      background-color: #76a884;
+    }
+
+    @media (max-width: 768px) {
+      .contact-section {
+        padding: 2rem 1rem;
+      }
+
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .contact-info h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .contact-info p {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+      }
+
+      .social-links {
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      .social-links a {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .contact-section {
+      margin-top: auto;
+    }
+
+    footer {
+  background-color: #316131;
+  color: white;
+  padding: 2rem 1rem;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.footer-section p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.social-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #4CAF50;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .footer-content {
+    flex-direction: row; /* Mengubah ke horizontal */
+    flex-wrap: wrap; /* Memungkinkan wrap jika layar terlalu kecil */
+    justify-content: space-between;
+  }
+
+  .footer-section {
+    flex: 0 1 calc(33.333% - 2rem); /* Membagi menjadi 3 kolom dengan gap */
+    margin-bottom: 1rem;
+    min-width: 200px; /* Ukuran minimum setiap section */
+  }
+
+  .social-links {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .footer-section {
+    flex: 0 1 calc(50% - 1rem); /* Membagi menjadi 2 kolom pada layar lebih kecil */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer-section {
+    flex: 0 1 100%; /* Full width pada mobile */
+  }
+
+  footer {
+    padding: 1rem;
+  }
+
+  .footer-section h3 {
+    font-size: 1.1rem;
+  }
+
+  .footer-section p {
+    font-size: 0.85rem;
+  }
+
+  .social-links a {
+    font-size: 1.2rem;
+  }
+}
+  </style>
+  <body>
+    <nav class="navbar">
+      <div class="nav-content">
+        <div class="logo">OK TANI</div>
+        <div class="nav-links">
+          <a href="#beranda">BERANDA</a>
+          <a href="#tentang">TENTANG WEB</a>
+          <a href="#informasi">INFORMASI / MEDIA</a>
+          <a href="#fitur">FITUR</a>
+          <a href="#kontak">KONTAK</a>
+          <button onclick="redirectToLogin()" class="login-btn">
+            Daftar/Masuk
+          </button>
+        </div>
+        <div class="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+
+    <section id="beranda" class="hero">
+      <div class="hero-content">
+        <h1>Selamat Datang di OK TANI</h1>
+        <p>
+          Platform digital untuk mendukung kesejahteraan petani Indonesia
+          melalui teknologi modern dan inovasi pertanian
+        </p>
+        <button onclick="redirectToLogin()" class="btn">Mulai Sekarang</button>
+      </div>
+    </section>
+
+    <section id="tentang">
+      <h2>Tentang OK TANI</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Visi Kami</h3>
+          <p>
+            Menjadi platform digital terpercaya dan inovatif
+            yang berkomitmen untuk memajukan sektor pertanian Indonesia
+            melalui integrasi teknologi modern, sistem informasi yang akurat,
+            dan layanan konsultasi berbasis kecerdasan buatan. 
+            Platform ini dirancang untuk memberikan solusi komprehensif 
+            bagi para petani dalam mengoptimalkan hasil pertanian mereka melalui
+            fitur-fitur unggulan seperti sistem prediksi cuaca yang akurat, 
+            kalender tanam digital yang presisi, dan layanan konsultasi tani yang responsif.
+          </p>
+        </div>
+        <div class="info-card">
+          <h3>Misi Kami</h3>
+          <p>
+            Menyediakan layanan konsultasi pertanian berbasis kecerdasan buatan (chatbot) yang mudah diakses dan responsif untuk membantu petani mengatasi berbagai permasalahan pertanian.
+Mengembangkan sistem kalender tanam digital yang akurat untuk mengoptimalkan waktu dan hasil panen petani.
+Memberikan informasi cuaca real-time dan prediksi yang tepat untuk membantu petani dalam pengambilan keputusan terkait aktivitas pertanian.
+        </div>
+      </div>
+    </section>
+
+    <section id="informasi">
+      <h2>Informasi & Media</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Berita Terkini</h3>
+          <p>Update terbaru seputar dunia pertanian dan teknologi.</p>
+          <a href="https://psp.pertanian.go.id/berita?page=6" target="_blank" class="btn-green">Kunjungi Berita Terkini</a>
+        </div>
+        <div class="info-card">
+          <h3>Artikel Edukasi</h3>
+          <p>Berbagai artikel informatif tentang teknik pertanian modern.</p>
+          <a href="https://paktanidigital.com/artikel/ini-dia-daftar-website-untuk-belajar-pertanian/" target="_blank" class="btn-green">Baca Artikel Edukasi</a>
+        </div>
+        <div class="info-card">
+          <h3>Media Gallery</h3>
+          <p>Dokumentasi kegiatan dan pencapaian OK TANI.</p>
+          <a href="https://tanamanpangan.pertanian.go.id/daftar-galeri/foto" target="_blank" class="btn-green">Lihat Gallery</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="fitur">
+      <h2>Fitur Unggulan</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="fitur-icon">🤖</div>
+          <h3>Konsultasi Tani</h3>
+          <p>Layanan konsultasi pintar berbasis AI yang tersedia 24/7 untuk membantu petani:</p>
+          <li>Diagnosis masalah tanaman dan hama</li>
+          <li>Rekomendasi pemupukan & perawatan</li>
+          <li>Saran teknik budidaya optimal</li>
+          <li>Tips penanganan pasca panen</li>
+          <li>Konsultasi gratis tanpa batas waktu</li>
+        </div>
+        <div class="feature-card">
+          <div class="fitur-icon">🌤️</div>
+          <h3>Info Cuaca</h3>
+          <p>Informasi cuaca real-time dan prediksi akurat untuk:</p>
+          <li>Prakiraan cuaca harian dan mingguan</li>
+        <li>Peringatan dini cuaca ekstrem</li>
+        <li>Data curah hujan dan kelembaban</li>
+        <li>Analisis pola cuaca musiman</li>
+        <li>Rekomendasi waktu tanam optimal</li>
+      </ul>
+        </div>
+        <div class="feature-card">
+          <div class="fitur-icon">📅</div>
+          <h3>Kalender Tanaman</h3>
+          <p>Kalender digital untuk mengoptimalkan jadwal pertanian.</p>
+          <li>Penjadwalan masa tanam dan panen</li>
+          <li>Pengingat waktu pemupukan</li>
+          <li>Jadwal pengendalian hama</li>
+          <li>Rotasi tanaman optimal</li>
+          <li>Sinkronisasi dengan kondisi cuaca</li>
+        </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <h2>Hubungi Kami</h2>
+      <div class="contact-form">
+        <input type="text" placeholder="Nama" />
+        <input type="email" placeholder="Email" />
+        <textarea rows="5" placeholder="Pesan"></textarea>
+        <button type="submit">Kirim Pesan</button>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Hubungi Kami</h3>
+          <p>📧 oktani@gmail.com</p>
+          <p>📞 +62 812-3456-7890</p>
+          <p>📍 Jl. Nusaputra No. 123</p>
+          <p>Sukabumi, Indonesia</p>
+          <div class="social-links">
+            <a href="https://www.youtube.com/channel/UCJvGDm8v9Arb-HVdgFPyIEA" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/oktani2k24?igsh=MXZmbGRnMjNxN2FmeQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/6281563818593/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Kategori</h3>
+          <p>Pertanian Modern</p>
+          <p>Tips & Trik</p>
+          <p>Teknologi Pertanian</p>
+          <p>Agribisnis</p>
+          <p>Komunitas</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Tautan</h3>
+          <p>Beranda</p>
+          <p>Tentang Kami</p>
+          <p>Informasi/Media</p>
+          <p>Fitur</p>
+          <p>Kontak</p>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="scroll-to-top" id="scrollTop">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+      // Hamburger menu functionality
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+
+      // Close menu when clicking a link
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+        });
+      });
+
+      // Smooth scrolling
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+        // Scroll to top functionality
+        const scrollButton = document.getElementById("scrollTop");
+
+        window.addEventListener("scroll", () => {
+          if (window.pageYOffset > 100) {
+            scrollButton.classList.add("visible");
+          } else {
+            scrollButton.classList.remove("visible");
+          }
+        });
+
+        scrollButton.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+
+          function goToLogin() {
+            window.location.href = "1. Halaman Login.html";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

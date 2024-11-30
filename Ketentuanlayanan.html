@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ketentuan Layanan</title>
+    <style>
+        :root {
+            --primary-color: #4caf50;
+            --secondary-color: #34495e;
+            --accent-color: #4caf50;
+            --bg-color: #f8f9fa;
+            --text-color: #2c3e50;
+            --border-color: #e9ecef;
+            --section-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .back-button {
+        color: white;
+        text-decoration: none;
+        font-size: 1.5rem;
+      }
+
+        .header h1 {
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+
+        .header p {
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .tos-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .navigation {
+            position: sticky;
+            top: 0;
+            background-color: var(--section-bg);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem;
+        }
+
+        .nav-list li a {
+            color: var(--text-color);
+            text-decoration: none;
+            white-space: nowrap;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-list li a:hover,
+        .nav-list li a.active {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .content-section {
+            background-color: var(--section-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .content-section h3 {
+            color: var(--secondary-color);
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .content-section ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background-color: rgba(52, 152, 219, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: var(--secondary-color);
+            margin-top: 2rem;
+            padding: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--accent-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-decoration: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .nav-list {
+                padding-bottom: 0.5rem;
+            }
+
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="8. Halaman Profile.html" class="back-button">←</a>
+        <h1>Ketentuan Layanan</h1>
+        <p>Bacalah dengan seksama ketentuan layanan kami untuk memahami hak dan kewajiban Anda sebagai pengguna.</p>
+    </header>
+
+    <div class="tos-container">
+        <nav class="navigation">
+            <ul class="nav-list">
+                <li><a href="#definisi" class="active">Definisi</a></li>
+                <li><a href="#penggunaan">Penggunaan Layanan</a></li>
+                <li><a href="#akun">Akun Pengguna</a></li>
+                <li><a href="#privasi">Kebijakan Privasi</a></li>
+                <li><a href="#pembayaran">Pembayaran</a></li>
+                <li><a href="#batasan">Batasan</a></li>
+                <li><a href="#perubahan">Perubahan Ketentuan</a></li>
+            </ul>
+        </nav>
+
+        <section id="definisi" class="content-section">
+            <h2>1. Definisi</h2>
+            <div class="highlight-box">
+                <p>Ketentuan layanan ini mengatur hubungan antara pengguna dan penyedia layanan dalam penggunaan platform.</p>
+            </div>
+            <p>Dalam ketentuan layanan ini, istilah-istilah berikut memiliki arti:</p>
+            <ul>
+                <li><strong>"Layanan"</strong> - mengacu pada seluruh produk, fitur, dan jasa yang kami sediakan</li>
+                <li><strong>"Pengguna"</strong> - setiap individu atau entitas yang mengakses atau menggunakan Layanan</li>
+                <li><strong>"Konten"</strong> - segala bentuk informasi, data, atau materi yang tersedia melalui Layanan</li>
+            </ul>
+        </section>
+
+        <section id="penggunaan" class="content-section">
+            <h2>2. Penggunaan Layanan</h2>
+            <h3>2.1 Persyaratan Umum</h3>
+            <p>Dengan menggunakan layanan kami, Anda menyetujui untuk:</p>
+            <ul>
+                <li>Mematuhi seluruh hukum yang berlaku</li>
+                <li>Menghormati hak kekayaan intelektual</li>
+                <li>Menggunakan layanan sesuai dengan tujuan yang dimaksud</li>
+            </ul>
+
+            <h3>2.2 Batasan Penggunaan</h3>
+            <p>Anda tidak diperbolehkan untuk:</p>
+            <ul>
+                <li>Menyalahgunakan layanan untuk tujuan ilegal</li>
+                <li>Mengganggu atau merusak sistem</li>
+                <li>Menyebarkan konten yang melanggar hukum</li>
+            </ul>
+        </section>
+
+        <section id="akun" class="content-section">
+            <h2>3. Akun Pengguna</h2>
+            <div class="highlight-box">
+                <p>Anda bertanggung jawab penuh atas keamanan dan aktivitas akun Anda.</p>
+            </div>
+            <h3>3.1 Pembuatan Akun</h3>
+            <p>Dalam membuat akun, Anda harus:</p>
+            <ul>
+                <li>Memberikan informasi yang akurat dan lengkap</li>
+                <li>Menjaga kerahasiaan kata sandi</li>
+                <li>Memperbarui informasi jika ada perubahan</li>
+            </ul>
+        </section>
+
+        <section id="privasi" class="content-section">
+            <h2>4. Kebijakan Privasi</h2>
+            <p>Kami menghargai privasi Anda dan berkomitmen untuk melindungi data pribadi Anda sesuai dengan:</p>
+            <ul>
+                <li>Peraturan perlindungan data yang berlaku</li>
+                <li>Kebijakan privasi kami</li>
+                <li>Standar keamanan industri</li>
+            </ul>
+        </section>
+
+        <section id="pembayaran" class="content-section">
+            <h2>5. Pembayaran</h2>
+            <h3>5.1 Biaya Layanan</h3>
+            <p>Detail mengenai biaya dan pembayaran:</p>
+            <ul>
+                <li>Semua biaya dalam mata uang Rupiah</li>
+                <li>Pembayaran diproses melalui gateway pembayaran resmi</li>
+                <li>Pengembalian dana sesuai kebijakan yang berlaku</li>
+            </ul>
+        </section>
+
+        <section id="batasan" class="content-section">
+            <h2>6. Batasan Tanggung Jawab</h2>
+            <div class="highlight-box">
+                <p>Kami tidak bertanggung jawab atas kerugian yang timbul dari penggunaan layanan di luar ketentuan yang berlaku.</p>
+            </div>
+        </section>
+
+        <section id="perubahan" class="content-section">
+            <h2>7. Perubahan Ketentuan</h2>
+            <p>Kami berhak mengubah ketentuan layanan ini sewaktu-waktu dengan pemberitahuan yang sesuai kepada pengguna.</p>
+        </section>
+
+        <div class="last-updated">
+            Terakhir diperbarui: 16 November 2024
+        </div>
+    </div>
+
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Back to top button visibility
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Active section highlighting
+        const sections = document.querySelectorAll('.content-section');
+        const navLinks = document.querySelectorAll('.nav-list a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

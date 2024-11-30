@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Drive Integration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .header {
+        background-color: #4caf50;
+        color: rgb(19, 18, 18);
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .back-button {
+        color: white;
+        text-decoration: none;
+        font-size: 1.5rem;
+      }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .main-content {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .menu-section {
+            margin-bottom: 30px;
+        }
+
+        .menu-title {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .menu-item {
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            color: #444;
+            text-decoration: none;
+            display: block;
+        }
+
+        .menu-item.active {
+            background: #f0f2ff;
+            color: #4858e8;
+        }
+
+        .gdrive-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .gdrive-title {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .dropdown-icon {
+            color: #666;
+            cursor: pointer;
+        }
+
+        .connection-status {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .status-icon {
+            color: #00a651;
+            font-size: 1.2rem;
+        }
+
+        .status-info {
+            flex: 1;
+        }
+
+        .status-text {
+            color: #00a651;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .status-email {
+            color: #666;
+        }
+
+        .gdrive-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .action-buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background: #fff;
+            color: #00a651;
+            border: 2px solid #00a651;
+        }
+
+        .btn-secondary {
+            color: #4858e8;
+            background: transparent;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="3. Halaman Beranda.html" class="back-button">←</a>
+        <h1>Kelola Akun</h1>
+      </header>
+    <div class="container">
+        <div class="sidebar">
+            <div class="menu-section">
+                <div class="menu-title">PROFIL</div>
+                <a href="#" class="menu-item">Data Diri</a>
+                <a href="#" class="menu-item">Ubah Kata Sandi</a>
+            </div>
+            <div class="menu-section">
+                <div class="menu-title">INTEGRASI</div>
+                <a href="#" class="menu-item active">Google</a>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="gdrive-header">
+                <span class="gdrive-title">Google</span>
+                <span class="dropdown-icon">▼</span>
+            </div>
+
+            <div class="connection-status">
+                <div>
+                    <span class="status-icon">✓</span>
+                </div>
+                <div class="status-info">
+                    <div class="status-text">Telah Terhubung</div>
+                    <div class="status-email">Akun Google Anda sudah terhubung dengan Website (taniok362@gmail.com)</div>
+                    <div class="action-buttons">
+                        <a href="#" class="btn btn-primary">Lihat Media Library</a>
+                        <a href="#" class="btn btn-secondary">Atur akun Google Anda</a>
+                    </div>
+                </div>
+                <div>
+                    <img src="image\logo google.png" alt="Google Drive" class="gdrive-logo">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Donasi</title>
+    <style>
+        :root {
+            --primary-color: #4caf50;
+            --secondary-color: #4caf50;
+            --bg-color: #f8f9fa;
+            --text-color: #2c3e50;
+            --card-bg: #ffffff;
+            --border-color: #e9ecef;
+            --success-color: #4caf50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            text-align: flex;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .back-button {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+
+        .donation-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .progress-section {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 20px;
+            background-color: var(--bg-color);
+            border-radius: 10px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 75%;
+            height: 100%;
+            background-color: var(--primary-color);
+            border-radius: 10px;
+            transition: width 0.5s ease-in-out;
+        }
+
+        .progress-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+        }
+
+        .donation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .donation-card {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .donation-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .donation-amount {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+
+        .custom-donation {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .input-group {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        input[type="number"] {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .payment-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .payment-method {
+            border: 2px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .payment-method:hover {
+            border-color: var(--primary-color);
+        }
+
+        .payment-method.active {
+            border-color: var(--primary-color);
+            background-color: rgba(46, 204, 113, 0.1);
+        }
+
+        .recent-donations {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .donation-list {
+            list-style: none;
+        }
+
+        .donation-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .donor-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .donor-avatar {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .donation-container {
+                padding: 0 1rem;
+            }
+
+            .input-group {
+                flex-direction: column;
+            }
+
+            .payment-methods {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .success-message {
+            display: none;
+            background-color: var(--success-color);
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="8. Halaman Profile.html" class="back-button">←</a>
+        <h1>Donasi untuk Kebaikan</h1>
+    </header>
+
+    <div class="donation-container">
+        <div class="progress-section">
+            <h2>Target Donasi</h2>
+            <div class="progress-bar-container">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="progress-stats">
+                <span>Terkumpul: Rp 75.000.000</span>
+                <span>Target: Rp 100.000.000</span>
+            </div>
+        </div>
+
+        <div class="donation-grid">
+            <div class="donation-card">
+                <h3>Paket Bronze</h3>
+                <div class="donation-amount">Rp 50.000</div>
+                <button class="btn btn-primary">Pilih</button>
+            </div>
+            <div class="donation-card">
+                <h3>Paket Silver</h3>
+                <div class="donation-amount">Rp 100.000</div>
+                <button class="btn btn-primary">Pilih</button>
+            </div>
+            <div class="donation-card">
+                <h3>Paket Gold</h3>
+                <div class="donation-amount">Rp 500.000</div>
+                <button class="btn btn-primary">Pilih</button>
+            </div>
+        </div>
+
+        <div class="custom-donation">
+            <h2>Donasi Custom</h2>
+            <div class="input-group">
+                <input type="number" placeholder="Masukkan jumlah donasi" min="10000" step="10000">
+                <button class="btn btn-primary">Donasi Sekarang</button>
+            </div>
+
+            <h3>Metode Pembayaran</h3>
+            <div class="payment-methods">
+                <div class="payment-method active">
+                    <h4>Bank Transfer</h4>
+                </div>
+                <div class="payment-method">
+                    <h4>E-Wallet</h4>
+                </div>
+                <div class="payment-method">
+                    <h4>QRIS</h4>
+                </div>
+                <div class="payment-method">
+                    <h4>Virtual Account</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="success-message">
+            Terima kasih! Donasi Anda telah berhasil.
+        </div>
+
+        <div class="recent-donations">
+            <h2>Donasi Terbaru</h2>
+            <ul class="donation-list">
+                <li class="donation-item">
+                    <div class="donor-info">
+                        <div class="donor-avatar">AS</div>
+                        <div>
+                            <h4>Andi Surya</h4>
+                            <small>2 menit yang lalu</small>
+                        </div>
+                    </div>
+                    <div class="donation-amount">Rp 100.000</div>
+                </li>
+                <li class="donation-item">
+                    <div class="donor-info">
+                        <div class="donor-avatar">BR</div>
+                        <div>
+                            <h4>Budi Rahardjo</h4>
+                            <small>5 menit yang lalu</small>
+                        </div>
+                    </div>
+                    <div class="donation-amount">Rp 500.000</div>
+                </li>
+                <li class="donation-item">
+                    <div class="donor-info">
+                        <div class="donor-avatar">CN</div>
+                        <div>
+                            <h4>Citra Nirmala</h4>
+                            <small>10 menit yang lalu</small>
+                        </div>
+                    </div>
+                    <div class="donation-amount">Rp 50.000</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Handling payment method selection
+        document.querySelectorAll('.payment-method').forEach(method => {
+            method.addEventListener('click', () => {
+                document.querySelectorAll('.payment-method').forEach(m => {
+                    m.classList.remove('active');
+                });
+                method.classList.add('active');
+            });
+        });
+
+        // Handling donation button clicks
+        document.querySelectorAll('.donation-card .btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const successMessage = document.querySelector('.success-message');
+                successMessage.style.display = 'block';
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 3000);
+            });
+        });
+
+        // Custom donation handling
+        document.querySelector('.custom-donation .btn').addEventListener('click', () => {
+            const amount = document.querySelector('.custom-donation input').value;
+            if (amount >= 10000) {
+                const successMessage = document.querySelector('.success-message');
+                successMessage.style.display = 'block';
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>

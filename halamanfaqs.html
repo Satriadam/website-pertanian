@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.header {
+        background-color: #4caf50;
+        color: white;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+.back-button {
+        color: white;
+        text-decoration: none;
+        font-size: 1.5rem;
+      }
+
+
+/* Style untuk bagian header sama seperti sebelumnya */
+
+.faq-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 20px;
+}
+
+.faq-title {
+  text-align: center;
+  color: #4caf50;
+  margin-bottom: 2rem;
+}
+
+.search-box {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border: 2px solid #4caf50;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.faq-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.category-btn {
+  padding: 0.8rem;
+  background-color: white;
+  border: 2px solid #4caf50;
+  border-radius: 8px;
+  color: #4caf50;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover, .category-btn.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.faq-item {
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.faq-question {
+  padding: 1rem;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+}
+
+.faq-question:hover {
+  background-color: #f8f8f8;
+}
+
+.faq-answer {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background-color: #f8f8f8;
+}
+
+.faq-answer.active {
+  padding: 1rem;
+  max-height: 500px;
+}
+
+.toggle-icon {
+  color: #4caf50;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .toggle-icon {
+  transform: rotate(45deg);
+}
+
+.feedback-section {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.feedback-question {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.feedback-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.feedback-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.yes-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.no-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.feedback-btn:hover {
+  opacity: 0.9;
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+    <a href="3. Halaman Beranda.html" class="back-button">←</a>
+      <h1>Bantuan & FAQ</h1>
+</header>
+
+<div class="faq-container">
+  <h1 class="faq-title">Pertanyaan yang Sering Diajukan</h1>
+  
+  <input type="text" class="search-box" placeholder="Cari pertanyaan...">
+  
+  <div class="faq-categories">
+    <button class="category-btn active">Semua</button>
+    <button class="category-btn">Umum</button>
+    <button class="category-btn">Akun</button>
+    <button class="category-btn">Layanan</button>
+  </div>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-question">
+        Bagaimana cara mendaftar di OK TANI?
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Untuk mendaftar di OK TANI, Anda dapat mengikuti langkah-langkah berikut:
+        <ol>
+          <li>Kunjungi halaman pendaftaran</li>
+          <li>Isi formulir dengan data diri yang valid</li>
+          <li>Verifikasi email Anda</li>
+          <li>Lengkapi profil Anda</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Bagaimana cara mengubah password?
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Untuk mengubah password, silakan masuk ke menu Pengaturan > Keamanan Akun > Ubah Password.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Apa manfaat menjadi member OK TANI?
+        <span class="toggle-icon">+</span>
+      </div>
+      <div class="faq-answer">
+        Member OK TANI mendapatkan berbagai keuntungan seperti akses ke fitur premium, konsultasi prioritas, dan berbagai promo khusus member.
+      </div>
+    </div>
+  </div>
+
+  <div class="feedback-section">
+    <p class="feedback-question">Apakah informasi ini membantu?</p>
+    <div class="feedback-buttons">
+      <button class="feedback-btn yes-btn">Ya</button>
+      <button class="feedback-btn no-btn">Tidak</button>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Toggle FAQ answers
+    const faqItems = document.querySelectorAll('.faq-question');
+    faqItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const parent = item.parentElement;
+            const answer = item.nextElementSibling;
+            
+            // Close other open items
+            document.querySelectorAll('.faq-item').forEach(otherItem => {
+                if (otherItem !== parent) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer').classList.remove('active');
+                }
+            });
+            
+            // Toggle current item
+            parent.classList.toggle('active');
+            answer.classList.toggle('active');
+        });
+    });
+
+    // Search functionality
+    const searchBox = document.querySelector('.search-box');
+    searchBox.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question').textContent.toLowerCase();
+            const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+            
+            if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+
+    // Category buttons
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        });
+    });
+
+    // Feedback buttons
+    const feedbackButtons = document.querySelectorAll('.feedback-btn');
+    feedbackButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const feedback = button.textContent;
+            alert(`Terima kasih atas feedback Anda: ${feedback}`);
+            button.parentElement.innerHTML = '<p>Terima kasih atas feedback Anda!</p>';
+        });
+    });
+});
+</script>
+
+</body>
+</html>
